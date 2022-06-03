@@ -15,7 +15,7 @@ def brackets(text, pattern = '(){}[]'):
         if el in opened:
             st.push(opened.index(el))
         elif el in closed:
-            if st.stack[-1] == closed.index(el):
+            if st.stack and st.stack[-1] == closed.index(el):
                 st.pop()
             else: return False
 
